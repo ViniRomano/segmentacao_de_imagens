@@ -1,1 +1,1 @@
-# segmenta-o_de_imagens
+# segmentacao_de_imagens
