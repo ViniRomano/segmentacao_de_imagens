@@ -1,6 +1,6 @@
 void desenharGrafico(int VP, int FP, int FN, int VN) {
     int maxVal = max(VP, FP, FN);
-    float scaleFactor = 200.0 / maxVal;  // Escala para ajustar no canvas
+    float scaleFactor = 200.0 / maxVal; 
 
     fill(0, 255, 0);  // Verde para VP
     rect(50, 250, 50, -VP * scaleFactor);
@@ -27,8 +27,8 @@ void calcularMetricas(PImage imgSegmentada, PImage groundTruth) {
     int VP = 0, FP = 0, FN = 0, VN = 0;
 
     for (int i = 0; i < imgSegmentada.pixels.length; i++) {
-        boolean segmentado = (brightness(imgSegmentada.pixels[i]) > 128);  // supondo limiar de 128 para segmentação
-        boolean real = (brightness(groundTruth.pixels[i]) > 128);  // mesmo limiar para o ground truth
+        boolean segmentado = (brightness(imgSegmentada.pixels[i]) > 210); 
+        boolean real = (brightness(groundTruth.pixels[i]) > 210);  // mesmo limiar para o ground truth
 
         if (segmentado && real) VP++;
         else if (segmentado && !real) FP++;
